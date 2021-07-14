@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="clearfix">
     <sidebar></sidebar>
     <router-view />
   </div>
@@ -27,12 +27,22 @@ export default {
   color: #2c3e50;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.main-content {
+  width: 80%;
+  float: right;
 }
 </style>

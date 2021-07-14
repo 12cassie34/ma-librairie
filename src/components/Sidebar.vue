@@ -21,9 +21,11 @@
 <style lang="scss" scoped>
 #nav {
   width: 15%;
+  float: left;
   background-color: $midnight;
   .list-container {
     padding: 1rem;
+    height: 100vh;
     a {
       font-size: 1.2rem;
       color: $beach;
