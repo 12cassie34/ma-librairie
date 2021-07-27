@@ -42,7 +42,7 @@ export default {
 }
 
 .main-content {
-  width: 80%;
+  width: 85%;
   float: right;
 }
 </style>
