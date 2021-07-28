@@ -1,3 +1,17 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
 .main-content {
     height: 100vh;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }

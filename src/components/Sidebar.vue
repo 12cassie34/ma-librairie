@@ -2,7 +2,7 @@
   <div id="nav">
     <div class="list-container">
       <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
-        <li class="uk-active"><router-link to="/">現正閱讀</router-link></li>
+        <li class="uk-active"><router-link to="/">閱讀中</router-link></li>
         <li class="uk-parent">
           <a href="#">已閱讀書單</a>
           <ul class="uk-nav-sub">
