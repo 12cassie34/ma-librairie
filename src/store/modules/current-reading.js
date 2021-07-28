@@ -6,6 +6,7 @@ export default {
     state: {
         name: "",
         trans_name: "",
+        img: "",
         author: "",
         translator: "",
         publish_house: "",
@@ -19,6 +20,7 @@ export default {
         getData({state}) {
             state.name = currentReading.name;
             state.trans_name = currentReading.trans_name;
+            state.img = currentReading.img;
             state.author = currentReading.author;
             state.translator = currentReading.translator;
             state.publish_house = currentReading.publish_house;
