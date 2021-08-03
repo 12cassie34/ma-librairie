@@ -1,6 +1,13 @@
 <template>
   <div class="home main-content">
     <div class="container">
+      <div class="progress">
+        <div class="bars">
+          <div :style="progressWidth" class="progress-bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="number">{{ current_page }} / {{ pages }}</div>
+      </div>
       <div class="row">
         <div class="col-6 img">
           <img :src="require(`@/assets/${img}`)" :alt="trans_name">
@@ -31,6 +38,12 @@ export default {
     translator: state => state.currentReading.translator,
     pages: state => state.currentReading.pages,
     current_page: state => state.currentReading.current_page,
+    progressWidth() {
+      const percentage = this.current_page * 100 / this.pages;
+      return {
+        width: `${percentage}%`
+      }
+    }
   }),
   created() {
     this.$store.dispatch('currentReading/getData');
@@ -40,9 +53,30 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  margin-top: 25vh;
+  .progress {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .bars {
+      width: 90%;
+      position: relative;
+      .progress-bar {
+        height: 5px;
+        background-color: $pink;
+        position: absolute;
+      }
+      .bar {
+        width: 100%;
+        height: 5px;
+        background-color: $midnight;
+      }
+    }
+  }
   .row {
     margin: 0 auto;
-    margin-top: 25vh;
     width: 80%;
     height: 260px;
     background-color: $marron;
