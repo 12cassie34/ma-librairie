@@ -3,6 +3,24 @@ img {
     height: auto;
 }
 
+input {
+    border: 1px solid darkgray;
+    padding-left: 9px;
+    width: 100%;
+    height: 30px;
+    transition: 0.2s ease-in-out;
+    transition-property: border;
+}
+
+input:focus {
+    outline:none;
+    border: 1.5px solid $midnight;
+}
+
+button.confirm {
+    background-color: $midnight;
+}
+
 .main-content {
     height: 100vh;
 }

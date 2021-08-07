@@ -20,15 +20,23 @@
           </div>
         </div>
       </div>
+      <div class="btns">
+        <button @click="finish" class="uk-button uk-button-default finish">我讀完了</button>
+        <update-progress />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import updateProgress from '../components/UpdateProgress.vue';
 
 export default {
   name: "Home",
+  components: {
+    updateProgress
+  },
   computed: mapState({
     // arrow functions can make the code very succinct!
     name: state => state.currentReading.name,
@@ -45,6 +53,11 @@ export default {
       }
     }
   }),
+  methods: {
+    finish() {
+      this.$store.commit('currentReading/finish');
+    }
+  },
   created() {
     this.$store.dispatch('currentReading/getData');
   },
@@ -92,6 +105,19 @@ export default {
         padding-right: 85px;
         padding-top: 30px;
         color: ghostwhite;
+    }
+  }
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    button.finish {
+      background-color: $pink;
+    }
+    button:hover.finish {
+      border-color: #f0828c;
+      background-color: transparent;
+      color: #f0828c;
     }
   }
   h2 {

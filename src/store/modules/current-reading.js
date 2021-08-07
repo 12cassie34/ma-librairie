@@ -12,10 +12,19 @@ export default {
         publish_house: "",
         tw_publish_date: "",
         pages: "",
-        current_page: ""
+        current_page: "",
+        finishReading: false
     },
     getters: {},
-    mutations: {},
+    mutations: {
+        updateCurrentPage(state, currentPage) {
+            state.current_page = currentPage;
+        },
+        finish(state) {
+            state.finishReading = true;
+            state.current_page = state.pages;
+        }
+    },
     actions: {
         getData({state}) {
             state.name = currentReading.name;
