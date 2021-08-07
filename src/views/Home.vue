@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="btns">
-        <button @click="finish" class="uk-button uk-button-default finish">我讀完了</button>
+        <finish-reading />
         <update-progress />
       </div>
     </div>
@@ -31,11 +31,12 @@
 <script>
 import { mapState } from 'vuex'
 import updateProgress from '../components/UpdateProgress.vue';
+import finishReading from '../components/FinishReading.vue';
 
 export default {
   name: "Home",
   components: {
-    updateProgress
+    updateProgress, finishReading
   },
   computed: mapState({
     // arrow functions can make the code very succinct!
@@ -53,11 +54,6 @@ export default {
       }
     }
   }),
-  methods: {
-    finish() {
-      this.$store.commit('currentReading/finish');
-    }
-  },
   created() {
     this.$store.dispatch('currentReading/getData');
   },
@@ -111,14 +107,6 @@ export default {
     display: flex;
     justify-content: flex-end;
     width: 90%;
-    button.finish {
-      background-color: $pink;
-    }
-    button:hover.finish {
-      border-color: #f0828c;
-      background-color: transparent;
-      color: #f0828c;
-    }
   }
   h2 {
     @include up-down-margin;
