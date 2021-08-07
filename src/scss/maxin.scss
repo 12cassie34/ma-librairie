@@ -6,3 +6,25 @@
 @mixin focus-input {
     border: 1px solid $midnight;
 }
+
+// for button bg-color and hover
+@mixin btn-midnight {
+    background-color: $midnight;
+    color: white;
+}
+
+@mixin btn-midnight-hover {
+    border-color: $midnight;
+    background-color: transparent;
+    color: $midnight;
+}
+
+@mixin btn-pink {
+    background-color: $pink;
+}
+
+@mixin btn-pink-hover {
+    border-color: #f0828c;
+    background-color: transparent;
+    color: #f0828c;
+}

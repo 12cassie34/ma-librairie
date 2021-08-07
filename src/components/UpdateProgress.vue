@@ -69,13 +69,10 @@ export default {
 <style lang="scss" scoped>
 .modal {
   button {
-    background-color: $midnight;
-    color: white;
+    @include btn-midnight;
   }
   button:hover {
-    border-color: $midnight;
-    background-color: transparent;
-    color: $midnight;
+    @include btn-midnight-hover;
   }
   input.uk-input:focus {
       @include focus-input;

@@ -18,7 +18,7 @@ input:focus {
 }
 
 button.confirm {
-    background-color: $midnight;
+    @include btn-midnight;
 }
 
 .main-content {

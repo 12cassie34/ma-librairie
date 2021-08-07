@@ -38,11 +38,9 @@ export default {
 
 <style lang="scss" scoped>
 button.finish {
-    background-color: $pink;
+    @include btn-pink;
 }
 button:hover.finish {
-    border-color: #f0828c;
-    background-color: transparent;
-    color: #f0828c;
+    @include btn-pink-hover;
 }
 </style>
