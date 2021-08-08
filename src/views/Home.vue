@@ -1,6 +1,6 @@
 <template>
   <div class="home main-content">
-    <div class="container">
+    <div id="current-reading" class="container">
       <div class="progress">
         <div class="bars">
           <div :style="progressWidth" class="progress-bar"></div>
@@ -54,6 +54,14 @@ export default {
       }
     }
   }),
+  watch: {
+    current_page() {
+      if (this.current_page === this.pages) {
+        this.$store.commit('hasBook/finishReading');
+        document.getElementById('current-reading').classList.add('finish');
+      }
+    }
+  },
   created() {
     this.$store.dispatch('currentReading/getData');
   },
@@ -63,6 +71,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin-top: 25vh;
+  opacity: 1;
   .progress {
     margin: 0 auto;
     width: 80%;
@@ -118,5 +127,9 @@ export default {
   img {
     width: 200px;
   }
+}
+.container.finish {
+  transition: opacity 3s;
+  opacity: 0;
 }
 </style>

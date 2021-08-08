@@ -5,6 +5,9 @@ export default {
     },
     getters: {},
     mutations: {
+        finishReading(state) {
+            state.hasBook = false;
+        }
     },
     actions: {
     }
