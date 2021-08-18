@@ -7,6 +7,9 @@ export default {
     mutations: {
         finishReading(state) {
             state.hasBook = false;
+        },
+        newBook(state) {
+            state.hasBook = true;
         }
     },
     actions: {

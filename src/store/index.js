@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import currentReading from './modules/current-reading';
-import hasBook from './modules/has-book';
+import currentReading from './modules/current_reading';
+import hasBook from './modules/has_book';
 
 Vue.use(Vuex);
 

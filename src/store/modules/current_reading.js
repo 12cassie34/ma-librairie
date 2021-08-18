@@ -20,9 +20,31 @@ export default {
         updateCurrentPage(state, currentPage) {
             state.current_page = currentPage;
         },
+        changeName(state, newName) {
+            state.name = newName;
+        },
         finish(state) {
             state.finishReading = true;
-            state.current_page = state.pages;
+            state.name = '';
+            state.trans_name = '';
+            state.img = '';
+            state.author = '';
+            state.translator = '';
+            state.publish_house = '';
+            state.tw_publish_date = '';
+            state.pages = '';
+            state.current_page = '';
+        },
+        newReading(state, newBook) {
+            state.name = newBook.name;
+            state.trans_name = newBook.trans_name;
+            state.img = newBook.img;
+            state.author = newBook.author;
+            state.translator = newBook.translator;
+            state.publish_house = newBook.publish_house;
+            state.tw_publish_date = newBook.tw_publish_date;
+            state.pages = newBook.pages;
+            state.finishReading = false;
         }
     },
     actions: {

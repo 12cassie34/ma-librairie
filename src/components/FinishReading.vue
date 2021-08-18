@@ -31,6 +31,7 @@ export default {
     methods: {
         finish() {
             this.$store.commit('currentReading/finish');
+            this.$store.commit('hasBook/finishReading');
         }
     }
 }
