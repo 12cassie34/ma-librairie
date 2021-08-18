@@ -11,7 +11,7 @@
         </div>
         <div class="row">
           <div class="col-6 img">
-            <!-- <img :src="require(`@/assets/${img}`)" :alt="trans_name" /> -->
+            <img :src="require(`@/assets/${img}`)" :alt="trans_name" />
           </div>
           <div class="col-6">
             <div class="text-container">
